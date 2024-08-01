@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prova 02 (Digimon API)</title>
+    <link rel="stylesheet" href="style.css"> <!-- Importa o arquivo CSS externo -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- Importa a biblioteca Vue.js -->
+</head>
+
+<body>
+    <div id="app" v-cloak> <!-- Diretiva v-cloak para ocultar o conteúdo não renderizado pelo Vue.js -->
+        <div class="search-bar"> <!-- Barra de pesquisa -->
+            <input type="text" v-model="searchText" :placeholder="searchPlaceholder" class="search-input"> <!-- Input de texto para a pesquisa -->
+            <select v-model="searchLevel" @change="updateSearchText" class="search-level"> <!-- Select para selecionar o tipo de pesquisa -->
+                <option value="name">Nome</option> <!-- Opção para pesquisar por nome -->
+                <option value="level">Nível</option> <!-- Opção para pesquisar por nível -->
+            </select>
+        </div>
+        <div class="digimon-container"> <!-- Contêiner para exibir os digimons -->
+            <ul>
+                <li v-for="digimon in filteredDigimons" :key="digimon.name" :class="getLevelClass(digimon.level)"> <!-- Loop para exibir cada digimon -->
+                    <div class="digimon-card">
+                        <img :src="digimon.img" alt="digimon-image"> <!-- Imagem do digimon -->
+                        <p class="digimon-name">{{ digimon.name }}</p> <!-- Nome do digimon -->
+                        <div v-if="digimon.showDetails" class="details"> <!-- Detalhes do digimon -->
+                            <p>Nível: {{ digimon.level }}</p> <!-- Nível do digimon -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div v-if="loading">Loading...</div> <!-- Mensagem de carregamento -->
+    </div>
+
+    <script src="index.js"></script> <!-- Importa o arquivo JavaScript -->
+</body>
+
+</html>

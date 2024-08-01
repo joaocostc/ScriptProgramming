@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 08 --- V-model e V-IF</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" v-cloak>
+    <p v-if="!nome"> Olá Fulano! </p>
+    <p v-else> {{ msg() }} </p>
+    <hr>
+
+    <label>Nome</label>
+    <input type="text" v-model="nome">
+    <label>Sobrenome</label>
+    <input type="text" v-model="sobrenome">
+
+    <hr>
+
+    <button @click="onOff()">Ligar/Desligar</button>
+    <img v-if="!status" src="./static/off.png" width="250px">
+    <img v-else src="./static/on.png" width="250px">
+
+    <hr>
+    <label> Interruptor </label>
+    <input type="text" v-model="interruptor" @input="verificaEstado">
+
+    <img v-if="ultimoEstado == 'acesa'" src="./static/on.png" width="250px">
+    <img v-else-if="ultimoEstado == 'apagada'" src="./static/off.png" width="250px">
+
+</div>
+</body>
+</html>
+<script src="index.js"></script>    

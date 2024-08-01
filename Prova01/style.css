@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1ECF1;
+}
+
+#app {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.personagem {
+    background-color: white;
+    border: 2px solid #1D509F;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.acoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1D509F;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #1A355E;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.barra-vida {
+    height: 30px;
+    background-color: #4CAF50; 
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: width 0.9s ease, background-color 0.3s ease;
+}
+
+.barra-vida.amarela {
+    background-color: rgb(250, 250, 103);
+}
+
+.barra-vida.vermelha {
+    background-color: rgb(255, 0, 0);
+}
+
+.sprite {
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.imagemPersonagem {
+    width: 145px;
+    height: 100px;
+}

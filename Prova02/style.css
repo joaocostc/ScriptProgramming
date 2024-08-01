@@ -1,0 +1,103 @@
+/* Esconde o conteúdo não renderizado enquanto o Vue.js carrega */
+[v-cloak] {
+    display: none;
+}
+
+/* Estilo básico para o corpo do documento */
+body {
+    font-family: "Roboto", sans-serif; /* Define a fonte */
+    background-color: #f0f0f0; /* Cor de fundo */
+    margin: 0; /* Remove margens */
+}
+
+/* Estilo para listas não ordenadas */
+ul {
+    list-style-type: none; /* Remove marcadores de lista */
+    padding: 0; /* Remove preenchimento */
+    display: flex; /* Exibe os itens da lista em linha */
+    flex-wrap: wrap; /* Permite que os itens da lista quebrem para a próxima linha */
+    justify-content: space-around; /* Alinha os itens horizontalmente */
+    margin: 20px 0; /* Adiciona margem superior e inferior */
+}
+
+/* Estilo para itens de lista */
+li {
+    margin: 16px; /* Adiciona margem externa */
+    padding: 16px; /* Adiciona preenchimento interno */
+    border-radius: 12px; /* Borda arredondada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    cursor: pointer; /* Altera o cursor ao passar por cima */
+}
+
+/* Estilo hover para itens de lista */
+li:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+}
+
+/* Estilo para cartões de Digimon */
+.digimon-card {
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para imagens de Digimon */
+.digimon-card img {
+    width: 160px; /* Largura da imagem */
+    height: 160px; /* Altura da imagem */
+    border-radius: 50%; /* Borda circular */
+}
+
+/* Estilo para o nome do Digimon */
+.digimon-name {
+    font-weight: bold; /* Fonte em negrito */
+    margin: 10px; /* Margem ao redor do nome */
+}
+
+/* Estilo para a barra de pesquisa */
+.search-bar {
+    text-align: center; /* Centraliza o conteúdo */
+    margin-top: 20px; /* Margem superior */
+}
+
+/* Estilo para o input de pesquisa */
+.search-input {
+    width: 300px; /* Largura do input */
+    padding: 10px; /* Preenchimento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Borda arredondada */
+    transition: border-color 0.3s ease; /* Transição suave */
+    margin-right: 10px; /* Margem à direita */
+}
+
+/* Estilo focus para o input de pesquisa */
+.search-input:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    border-color: #007bff; /* Cor da borda ao focar */
+}
+
+/* Estilo para o select de níveis */
+.search-level {
+    padding: 10px; /* Preenchimento */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Borda arredondada */
+    transition: border-color 0.3s ease; /* Transição suave */
+}
+
+/* Estilo focus para o select de níveis */
+.search-level:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    border-color: #007bff; /* Cor da borda ao focar */
+}
+
+/* Estilos para as classes de nível atualizadas */
+.InTraining {background-color: #a3d9d9;} /* Cor de fundo para nível In Training */
+.Rookie {background-color: #ccff33;} /* Cor de fundo para nível Rookie */
+.Champion {background-color: #ff5733;} /* Cor de fundo para nível Champion */
+.Ultimate {background-color: #9933ff;} /* Cor de fundo para nível Ultimate */
+.Fresh {background-color: #ffff66;} /* Cor de fundo para nível Fresh */
+.Mega {background-color: #666666;} /* Cor de fundo para nível Mega */
+.Training {background-color: #ff9933;} /* Cor de fundo para nível Training */
+.Armor {background-color: #ffd700;} /* Cor de fundo para nível Armor */

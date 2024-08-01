@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokédex - API Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="search-bar">
+        <input type="text" v-model="searchText" placeholder="Procure um pokémon">
+    </div>
+    <div class="pokemon-container">
+        <ul>
+            <li v-for="pokemon in filtredPokemons" :key="pokemon.id" :class="getTypeClass(pokemon.types[0].type.name)">
+                <div class="pokemon-card">
+                    <img :src="pokemon.sprite.front_default" alt="pokemon-image">
+                    <p class="pokemon-name">{{pokemon.name.toUpperCase()}}</p>
+                    <div v-if="pokemon.showDetails" class="details">
+                        <p>Tipo: {{pokemon.types[0].type.name}}</p>
+                        <p>Peso: {{pokemon.weight}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div v-if="loading" >Loading... </div>
+</div>
+</body>
+</html>
+
+<script src="index.js"></script>

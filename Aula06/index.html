@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - V-ON e V-BIND</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div :style="{backgroundColor: corDeFundo}">
+            Este é um exemplo de V-BIND!
+        </div>
+        <h1 :style="{backgroundColor: confereNumero()}"> O contador está em: {{contador}}</h1>
+        <button @click="incrementarContador"> + 1 </button>
+
+        <h1> O contador está em: {{ contadorDecremento }}</h1>
+        <div>
+            <img :src="imagem" alt="">
+        </div>
+        <button @click="decrementarContador"> - 1 </button>
+    </div>
+</body>
+
+<script>
+    const { createApp } = Vue;
+    createApp({
+        data() { // Usado para armazenar as variáveis
+            return {
+                corDeFundo: 'gray',
+                contador: 0,
+                contadorDecremento: 10,
+                corImpar: "orange",
+                corPar: "purple",
+                imagem: "",
+            }
+        },
+        methods: {
+            incrementarContador() {
+                this.contador++
+            },
+            decrementarContador() {
+                if (this.contadorDecremento === 0) {
+                    return this.imagem = "./static/bomba.png" 
+                } else {
+                    this.contadorDecremento--;
+                    return this.imagemExibida = "";
+                }
+            },
+            confereNumero() {
+                if (this.contador % 2 === 0) {
+                    return this.corPar;
+                } else {
+                    return this.corImpar;
+                }
+            }
+
+        }
+
+    }).mount('#app');
+</script>
+
+</html>
